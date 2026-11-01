@@ -26,7 +26,7 @@ class _TaskDashboardScreenState extends State<TaskDashboardScreen> {
   static const Color muted = Color(0xFF91A0B7);
   static const Color accent = Color(0xFF6C8CFF);
 
-  int get _completed => _tasks.where((TaskItem task) => task.isCompleted).length;
+  String get _dateLabel {\n    final DateTime now = DateTime.now();\n    const List<String> weekdays = <String>['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];\n    const List<String> months = <String>['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];\n    return '${weekdays[now.weekday - 1]}, ${months[now.month - 1]} ${now.day}';\n  }\n\n  String get _greeting {\n    final int hour = DateTime.now().hour;\n    if (hour < 12) return 'Good morning';\n    if (hour < 17) return 'Good afternoon';\n    return 'Good evening';\n  }\n\n  int get _completed => _tasks.where((TaskItem task) => task.isCompleted).length;
   int get _active => _tasks.length - _completed;
 
   List<TaskItem> get _visible {
@@ -98,9 +98,9 @@ class _TaskDashboardScreenState extends State<TaskDashboardScreen> {
                 children: <Widget>[
                   _header(),
                   const SizedBox(height: 30),
-                  const Text('MONDAY, NOVEMBER 2', style: TextStyle(color: muted, fontSize: 11, letterSpacing: 1.5, fontWeight: FontWeight.w700)),
+                  Text(_dateLabel, style: const TextStyle(color: muted, fontSize: 11, letterSpacing: 1.5, fontWeight: FontWeight.w700)),
                   const SizedBox(height: 9),
-                  const Text('Good morning, Nada 👋', style: TextStyle(color: Colors.white, fontSize: 27, fontWeight: FontWeight.w700)),
+                  Text('$_greeting, Nada 👋', style: const TextStyle(color: Colors.white, fontSize: 27, fontWeight: FontWeight.w700)),
                   const SizedBox(height: 7),
                   const Text('Here’s your overview for today.', style: TextStyle(color: muted, fontSize: 14)),
                   const SizedBox(height: 24),
