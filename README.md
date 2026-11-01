@@ -1,3 +1,28 @@
+# TaskFlow — Flutter Task Management App
+
+A personal Flutter project that evolves the open-source GeekyAnts Flutter Starter into a task-management application. The initial implementation introduces a responsive, professional dark dashboard and basic in-memory task interactions.
+
+## Current implementation
+
+- Professional dark dashboard with a responsive layout.
+- Summary cards for total, active, and completed tasks.
+- Task list with All, Active, and Completed filters.
+- Add a task through a dialog.
+- Mark tasks as complete and delete them.
+- Dashboard is connected to the existing `/home` route.
+
+## Project status and next steps
+
+This is an early development version. Tasks currently live in memory and reset when the app restarts. Persistent local storage, task editing, due-date selection, categories and priorities, automated tests, and a modernized dependency/toolchain setup are planned but are not yet implemented. The app has not yet been built or tested against the current Flutter SDK.
+
+## Attribution and license
+
+This repository is a fork of [GeekyAnts/flutter-starter](https://github.com/GeekyAnts/flutter-starter). The original starter-kit code and contributor history remain attributed to their authors. The upstream project is distributed under the MIT License; see [LICENSE](LICENSE) and retain the original copyright and license notices.
+
+---
+
+## Original GeekyAnts Flutter Starter documentation
+
 # Flutter Starter
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
