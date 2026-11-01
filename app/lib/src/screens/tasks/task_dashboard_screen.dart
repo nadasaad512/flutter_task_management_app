@@ -194,7 +194,7 @@ class _TaskDashboardScreenState extends State<TaskDashboardScreen> {
               activeColor: const Color(0xFF50C7A5),
               checkColor: bg,
               side: const BorderSide(color: muted),
-              onChanged: (bool value) => setState(() => task.isCompleted = value),
+              onChanged: (bool? value) { if (value != null) setState(() => task.isCompleted = value); },
             ),
             const SizedBox(width: 8),
             Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
